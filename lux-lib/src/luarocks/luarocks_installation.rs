@@ -32,16 +32,16 @@ const LUAROCKS_EXE: &str = "luarocks";
 #[cfg(target_family = "windows")]
 const LUAROCKS_EXE: &str = "luarocks.exe";
 
-pub(crate) const LUAROCKS_VERSION: &str = "3.11.1-1";
+pub(crate) const LUAROCKS_VERSION: &str = "3.13.0-1";
 
 #[cfg(target_family = "unix")]
 const LUAROCKS_ROCKSPEC: &str = "
 rockspec_format = '3.0'
 package = 'luarocks'
-version = '3.11.1-1'
+version = '3.13.0-1'
 source = {
     url = 'git+https://github.com/luarocks/luarocks',
-    tag = 'v3.11.1',
+    tag = 'v3.13.0',
 }
 build = {
     type = 'builtin',
@@ -148,10 +148,10 @@ impl LuaRocksInstallation {
     ) -> Result<(), LuaRocksInstallError> {
         use crate::{hash::HasIntegrity, operations};
         use std::io::Cursor;
-        let url = "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-windows-64.zip";
+        let url = "https://luarocks.github.io/luarocks/releases/luarocks-3.13.0-windows-64.zip";
         let response = reqwest::get(url).await?.error_for_status()?.bytes().await?;
         let hash = response.hash()?;
-        let expected_hash: Integrity = "sha256-xx26PQPhIwXpzNAixiHIhpq6PRJNkkniFK7VwW82gqM="
+        let expected_hash: Integrity = "sha256-iwV2Es2RAYUsXw2JOYugoDVA9VwTCiBiLMV0R53krjw="
             .parse()
             .unwrap();
         if expected_hash.matches(&hash).is_none() {
@@ -216,6 +216,7 @@ impl LuaRocksInstallation {
             LuaVersion::Lua52 | LuaVersion::LuaJIT52 => "5.2",
             LuaVersion::Lua53 => "5.3",
             LuaVersion::Lua54 => "5.4",
+            LuaVersion::Lua55 => "5.5",
         };
         let luarocks_config_content = format!(
             r#"

@@ -51,6 +51,7 @@
             lux-lua52
             lux-lua53
             lux-lua54
+            lux-lua55
             lux-luajit
             ;
         };
@@ -97,6 +98,7 @@
           lua52 = mkDevShell [pkgs.lua5_2];
           lua53 = mkDevShell [pkgs.lua5_3];
           lua54 = mkDevShell [pkgs.lua5_4];
+          lua55 = mkDevShell [pkgs.lua5_5];
           luajit = mkDevShell [pkgs.luajit];
           cd = mkBuildShell pkgs;
         };
