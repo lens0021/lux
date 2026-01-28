@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## `lux-cli` - [0.24.3](https://github.com/lumen-oss/lux/compare/v0.24.2...v0.24.3) - 2026-01-28
+
+### Added
+- *(lux-cli)* vendor with luau for sandboxing ([#1309](https://github.com/lumen-oss/lux/pull/1309))
+
+## `lux-lib` - [0.31.3](https://github.com/lumen-oss/lux/compare/lux-lib-v0.31.2...lux-lib-v0.31.3) - 2026-01-28
+
+### Added
+- enable luau sandbox mode when loading luarocks manifest
+- enable luau sandbox mode when loading remote rockspecs
+- enable luau sandbox mode when detecting Lua bin scripts
+- enable luau sandbox mode when loading rock manifests
+- enable luau sandbox mode when loading `extra.rockspec`
+- enable luau sandbox mode when loading rockspecs
+- *(lux-cli)* vendor with luau for sandboxing ([#1309](https://github.com/lumen-oss/lux/pull/1309))
+
+### Fixed
+- *(build)* substitute variables in rockspec modules ([#1317](https://github.com/lumen-oss/lux/pull/1317))
+
+### Other
+- *(build)* simplify Lua script detection ([#1308](https://github.com/lumen-oss/lux/pull/1308))
+
 ## `lux-cli` - [0.24.2](https://github.com/lumen-oss/lux/releases/tag/v0.24.2) - 2026-01-21
 
 ### Fixed
